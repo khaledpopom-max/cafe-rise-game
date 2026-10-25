@@ -27,9 +27,10 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Add Android Platform & Sync
+    - name: Add Android Platform & Generate Icons
       run: |
         npx cap add android
+        npx @capacitor/assets generate --android
         npx cap sync
 
     - name: Build Debug APK
